@@ -19,6 +19,7 @@ LIBFT = $(LIBFT_PATH)/libft.a
 
 # ================SRCS=================
 SRCS = main.c \
+		init.c \
 
 OBJS = $(SRCS:.c=.o)
 
