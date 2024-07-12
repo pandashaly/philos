@@ -2,19 +2,26 @@
   🍽️ 42 Philosophers</h1>
 </h1>
 
+<p align="center">
+  <img src="https://github.com/mcombeau/mcombeau/blob/main/42_badges/philosopherse.png" alt="philos_badge"/>
+</p>
+
+<h2 align="center">
+  🎓 Significance
+</h2>
+<p align="center">
+  <p>The Dining Philosophers problem is a fundamental example in both computer science and philosophy. It illustrates the challenges of resource allocation and process synchronization in concurrent programming. By simulating philosophers who must share limited resources (forks) without causing deadlock or starvation, this problem teaches important concepts that are applicable to real-world systems where resources are limited and processes must be managed efficiently.</p>
+
+![Philos](https://media.licdn.com/dms/image/D5612AQG6FH3H10niqg/article-cover_image-shrink_720_1280/0/1690698292358?e=1726099200&v=beta&t=ZkY6trlXGw6JXptqsEKDog3LT5PAAZ5LW4DXVcWRJ04)
+
+***
+
 <h2 align="center">
   Overview
 </h2>
 <p align="center">
   <p>This project is a simulation of the classic Dining Philosophers problem, where philosophers alternate between eating, thinking, and sleeping while trying to avoid starvation and deadlocks. The goal is to understand and implement concepts of multithreading and synchronization using mutexes.</p>
 
-![Philos](https://media.licdn.com/dms/image/D5612AQG6FH3H10niqg/article-cover_image-shrink_720_1280/0/1690698292358?e=1726099200&v=beta&t=ZkY6trlXGw6JXptqsEKDog3LT5PAAZ5LW4DXVcWRJ04)
-
-***
-
-## 🎓 Significance
-
-The Dining Philosophers problem is a fundamental example in both computer science and philosophy. It illustrates the challenges of resource allocation and process synchronization in concurrent programming. By simulating philosophers who must share limited resources (forks) without causing deadlock or starvation, this problem teaches important concepts that are applicable to real-world systems where resources are limited and processes must be managed efficiently.
 
 ## 💡 Concepts
 
