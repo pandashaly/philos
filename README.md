@@ -1,12 +1,15 @@
+<div style="text-align: center;">
+  <h1>🍽️ 42 Philosophers</h1>
+</div>
+
+<div style="text-align: center;">
+  <h2>Overview</h2>
+  <p>This project is a simulation of the classic Dining Philosophers problem, where philosophers alternate between eating, thinking, and sleeping while trying to avoid starvation and deadlocks. The goal is to understand and implement concepts of multithreading and synchronization using mutexes.</p>
+</div>
+
 ![Philos](https://media.licdn.com/dms/image/D5612AQG6FH3H10niqg/article-cover_image-shrink_720_1280/0/1690698292358?e=1726099200&v=beta&t=ZkY6trlXGw6JXptqsEKDog3LT5PAAZ5LW4DXVcWRJ04)
 
 ***
-
-# 🍽️ 42 Philosophers
-
-## 📑: Overview
-
-This project is a simulation of the classic Dining Philosophers problem, where philosophers alternate between eating, thinking, and sleeping while trying to avoid starvation and deadlocks. The goal is to understand and implement concepts of multithreading and synchronization using mutexes.
 
 ## 🎓 Significance
 
@@ -83,3 +86,19 @@ This will run the simulation with 5 philosophers, where each philosopher has 800
 ### 📚 What I Learned
 
 By doing this project as part of my 42 Core Curriculum, I learned the importance of multithreading and synchronization in software development. I gained practical experience with POSIX threads (`pthread`) and mutexes, which are essential for managing concurrency and ensuring that shared resources are used safely. Additionally, I understood the complexities of avoiding deadlock and starvation, which are critical for creating robust and reliable systems.
+
+***
+
+## Ressources
+
+* [Parallel Computing](https://computing.llnl.gov/tutorials/parallel_comp/)
+* [POSIX Threads](https://computing.llnl.gov/tutorials/pthreads/) ([pthread routines](https://computing.llnl.gov/tutorials/pthreads/#AppendixA))
+* [Working example](https://timmurphy.org/2010/05/04/pthreads-in-c-a-minimal-working-example/)
+* [French tutorial](https://franckh.developpez.com/tutoriels/posix/pthreads/)
+* [Semaphores in C](http://greenteapress.com/thinkos/html/thinkos012.html)
+* [Semaphores example in French](http://jean-luc.massat.perso.luminy.univ-amu.fr/ens/docs/thread-sem.html)
+* [fork() example](https://timmurphy.org/2014/04/26/using-fork-in-cc-a-minimum-working-example/)
+* [fork() multiple childs](https://stackoverflow.com/questions/876605/multiple-child-process)
+* [Semaphore when programs end](https://stackoverflow.com/questions/9537068/sem-close-vs-sem-unlink-when-process-terminates)
+
+
