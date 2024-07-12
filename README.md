@@ -1,11 +1,12 @@
-<div style="text-align: center;">
-  <h1>🍽️ 42 Philosophers</h1>
-</div>
+<h1 align="center">
+  🍽️ 42 Philosophers</h1>
+</h1>
 
-<div style="text-align: center;">
-  <h2>Overview</h2>
+<h2 align="center">
+  Overview
+</h2>
+<p align="center">
   <p>This project is a simulation of the classic Dining Philosophers problem, where philosophers alternate between eating, thinking, and sleeping while trying to avoid starvation and deadlocks. The goal is to understand and implement concepts of multithreading and synchronization using mutexes.</p>
-</div>
 
 ![Philos](https://media.licdn.com/dms/image/D5612AQG6FH3H10niqg/article-cover_image-shrink_720_1280/0/1690698292358?e=1726099200&v=beta&t=ZkY6trlXGw6JXptqsEKDog3LT5PAAZ5LW4DXVcWRJ04)
 
