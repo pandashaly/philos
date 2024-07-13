@@ -44,7 +44,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/42-philosophers.git
+   git clone https://github.com/pandashaly/philos.git
    cd 42-philosophers
 2. Compile the project using the provided Makefile:
 
