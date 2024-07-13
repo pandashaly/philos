@@ -45,7 +45,7 @@
 
    ```bash
    git clone https://github.com/pandashaly/philos.git
-   cd 42-philosophers
+   cd philos
 2. Compile the project using the provided Makefile:
 
     ```bash
