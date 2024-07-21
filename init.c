@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:33:16 by ssottori          #+#    #+#             */
-/*   Updated: 2024/07/14 02:26:36 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/07/21 15:43:02 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_init_philos(t_data *data)
 {
-	ft_init_data(&data);
-	ft_init_mutexes(&data);
-	ft_init_threads(&data);
+	ft_init_data(data);
+	ft_init_mutexes(data);
+	ft_init_threads(data);
 
 }
 
@@ -29,13 +29,15 @@ void	ft_init_data(t_data *data)
 	while (i < data->nop)
 	{
 		data->philos[i].id = i;
-		data->philos[i].L_chopstick = i;
-		data->philos[i].R_chopstick = i;
+		data->philos[i].l_chopstick = i;
+		data->philos[i].r_chopstick = (i + 1) % data->nop;
 		data->philos[i].donuts_eaten = 0;
 		data->philos[i].last_supper = 0;
 		data->philos[i].data = data;
 		i++;
 	}
+	pthread_mutex_init(&data->lock, NULL);
+	data->start_time = ft_get_time();
 }
 
 void	ft_init_mutexes(t_data *data)
@@ -45,10 +47,10 @@ void	ft_init_mutexes(t_data *data)
 	i = 0;
 	while (i < data->nop)
 	{
-		pthread_mutex_destroy(&data->forks[i]);
+		pthread_mutex_init(&data->forks[i], NULL);
 		i++;
 	}
-	pthread_mutex_destroy(&data->print_lock);
+	pthread_mutex_destroy(&data->lock);
 	free(data->forks);
 	free(data->philos);
 	free(data->threads);
@@ -61,7 +63,7 @@ void	ft_init_threads(t_data *data)
 	i = 0;
 	while (i < data->nop)
 	{
-		pthread_create(&data->threads[i], NULL, ft_bigbrother, &data->philos[i])
+		pthread_create(&data->threads[i], NULL, ft_routine, &data->philos[i]);
 		i++;
 	}
 }
@@ -74,7 +76,7 @@ void	ft_data_malloc(t_data *data)
 		perror("Failed to malloc forks");
 		exit(EXIT_FAILURE);
 	}
-	data->philos = (t_philo *)malloc(data->nop * sizeof(t_philos));
+	data->philos = (t_philo *)malloc(data->nop * sizeof(t_philo));
 	if (data->philos == NULL)
 	{
 		perror("Failed to malloc philos");

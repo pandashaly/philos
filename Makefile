@@ -20,6 +20,9 @@ LIBFT = $(LIBFT_PATH)/libft.a
 # ================SRCS=================
 SRCS = main.c \
 		init.c \
+		parser.c \
+		utils.c \
+		philos.c \
 
 OBJS = $(SRCS:.c=.o)
 
