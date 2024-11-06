@@ -21,6 +21,7 @@ SRCS = main.c \
 		utils.c \
 		philos.c \
 		cleanup.c \
+		panda_fun.c \
 
 OBJS = $(SRCS:.c=.o)
 

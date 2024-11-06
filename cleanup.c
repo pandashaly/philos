@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 00:31:07 by ssottori          #+#    #+#             */
-/*   Updated: 2024/11/06 01:46:29 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/11/06 02:29:05 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ void	ft_clear_table(t_data *data)
 	i = 0;
 	while (i < data->nop)
 	{
-		pthread_mutex_destroy(&data->forks[i]);
+		pthread_mutex_destroy(&data->bamboo[i]);
 		i++;
 	}
 	pthread_mutex_destroy(&data->lock);
-	free(data->forks);
-	free(data->philos);
+	free(data->bamboo);
+	free(data->pandas);
 	free(data->threads);
 }
 

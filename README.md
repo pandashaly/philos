@@ -10,7 +10,7 @@
   🎓 Significance
 </h2>
 <p align="center">
-  <p>The Dining Philosophers problem is a fundamental example in both computer science and philosophy. It illustrates the challenges of resource allocation and process synchronization in concurrent programming. By simulating philosophers who must share limited resources (forks) without causing deadlock or starvation, this problem teaches important concepts that are applicable to real-world systems where resources are limited and processes must be managed efficiently.</p>
+  <p>The Dining Philosophers problem is a fundamental example in both computer science and philosophy. It illustrates the challenges of resource allocation and process synchronization in concurrent programming. By simulating philosophers who must share limited resources (bamboo) without causing deadlock or starvation, this problem teaches important concepts that are applicable to real-world systems where resources are limited and processes must be managed efficiently.</p>
 
 ![Philos](https://media.licdn.com/dms/image/D5612AQG6FH3H10niqg/article-cover_image-shrink_720_1280/0/1690698292358?e=1726099200&v=beta&t=ZkY6trlXGw6JXptqsEKDog3LT5PAAZ5LW4DXVcWRJ04)
 
@@ -60,7 +60,7 @@ Run the program with the following command:
 ./philo <number_of_philosophers> <time_to_die> <time_to_eat> <time_to_sleep> [number_of_times_each_philosopher_must_eat]
 ```
 
-- `number_of_philosophers`: The number of philosophers and forks.
+- `number_of_philosophers`: The number of philosophers and bamboo.
 - `time_to_die`: Time in milliseconds before a philosopher dies without eating.
 - `time_to_eat`: Time in milliseconds it takes for a philosopher to eat.
 - `time_to_sleep`: Time in milliseconds a philosopher will spend sleeping.

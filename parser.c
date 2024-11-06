@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 01:46:24 by ssottori          #+#    #+#             */
-/*   Updated: 2024/11/06 01:49:17 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/11/06 02:23:12 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ int	ft_parser(t_data *data, int ac, char **av)
 	if (ac < 5 || ac > 6)
 		return (0);
 	data->nop = ft_atoi(av[1]);
-	data->rip_time = ft_atoi(av[2]);
-	data->muncies_time = ft_atoi(av[3]);
-	data->nap_time = ft_atoi(av[4]);
+	data->life_t = ft_atoi(av[2]);
+	data->eat_t = ft_atoi(av[3]);
+	data->nap_t = ft_atoi(av[4]);
 	if (ac == 6)
-		data->must_eat_times = ft_atoi(av[5]);
+		data->must_eat_t = ft_atoi(av[5]);
 	else
-		data->must_eat_times = -1;
-	if (data->nop <= 0 || data->rip_time <= 0
-		|| data->muncies_time <= 0 || data->nap_time <= 0
-		|| (ac == 6 && data->must_eat_times <= 0))
+		data->must_eat_t = -1;
+	if (data->nop <= 0 || data->life_t <= 0
+		|| data->eat_t <= 0 || data->nap_t <= 0
+		|| (ac == 6 && data->must_eat_t <= 0))
 		return (0);
 	return (ft_check_limits(data));
 }
@@ -65,13 +65,13 @@ int	ft_check_limits(t_data *data)
 		printf("Error: Num of philos must be between 1 and %d.\n", MAX_PHILOS);
 		return (0);
 	}
-	if (data->rip_time > MAX_TIME
-		|| data->muncies_time > MAX_TIME || data->nap_time > MAX_TIME)
+	if (data->life_t > MAX_TIME
+		|| data->eat_t > MAX_TIME || data->nap_t > MAX_TIME)
 	{
 		printf("Error: Time values must be between 1 and %d ms.\n", MAX_TIME);
 		return (0);
 	}
-	if (data->must_eat_times < -1)
+	if (data->must_eat_t < -1)
 	{
 		printf("Error: Num of times each philo must eat must be + or -1.\n");
 		return (0);
