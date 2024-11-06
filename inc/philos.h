@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:16:12 by ssottori          #+#    #+#             */
-/*   Updated: 2024/11/06 00:47:01 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/11/06 00:57:18 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ void    *ft_routine(void *arg);
 void	ft_sleep(long long time);
 
 void	ft_clear_table(t_data *data);
+void	ft_join_threads(t_data *data);
+
 
 
 #endif

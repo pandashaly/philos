@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:18:29 by ssottori          #+#    #+#             */
-/*   Updated: 2024/11/06 00:41:36 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/11/06 01:00:40 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int ac, char **av)
 	//ft_routine(&data); //keep track of philo states
 	//ft_clear_table(&data);
 	sleep(2);
+	ft_join_threads(&data);
 	ft_clear_table(&data);
 	return (EXIT_SUCCESS);
 }

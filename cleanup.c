@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 00:31:07 by ssottori          #+#    #+#             */
-/*   Updated: 2024/11/06 00:43:03 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/11/06 00:59:28 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,17 @@ void	ft_clear_table(t_data *data)
 	free(data->forks);
 	free(data->philos);
 	free(data->threads);
+}
+
+/*join threads for easier cleanup and avoid zombie threads*/
+void	ft_join_threads(t_data *data)
+{
+	int	i;
+	
+	i = 0;
+	while (i < data->nop)
+	{
+		pthread_join(data->threads[i], NULL);
+		i++;
+	}
 }
