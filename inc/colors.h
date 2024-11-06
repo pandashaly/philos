@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   colors.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/06 01:44:10 by ssottori          #+#    #+#             */
+/*   Updated: 2024/11/06 01:45:18 by ssottori         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#ifndef COLOUR_CODES_H
-# define COLOUR_CODES_H
+#ifndef COLORS_H
+# define COLORS_H
+
 # define BLK "\e[0;30m"
 # define RED "\e[0;31m"
 # define GRN "\e[0;32m"
@@ -69,4 +81,5 @@
 # define CLEAR_BELOW "\e[0J"
 # define CLEAR_ABOVE "\e[1J"
 # define CLEAR_ALL "\e[2J"
+
 #endif

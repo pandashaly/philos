@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:33:16 by ssottori          #+#    #+#             */
-/*   Updated: 2024/11/06 00:38:17 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/11/06 01:47:06 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	ft_init_philos(t_data *data)
 	ft_init_threads(data);
 }
 
-/* sets up each philos data (ID, each chopstick iD and inits a mutex lock as well as sim start time)*/
+/* sets up each philos data 
+(ID, each chopstick iD and inits a mutex lock as well as sim start time)*/
 
 void	ft_init_data(t_data *data)
 {

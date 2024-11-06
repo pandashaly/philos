@@ -6,18 +6,20 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 13:32:50 by ssottori          #+#    #+#             */
-/*   Updated: 2024/11/06 00:47:04 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/11/06 01:42:03 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philos.h"
 
-void    *ft_routine(void *arg)
+void	*ft_routine(void *arg)
 {
-    t_philo *philosopher = (t_philo *)arg;
-    (void)arg;
-    printf("Philo %d is starting his routine\n", philosopher->id);
-    return (NULL);
+	t_philo	*philosopher;
+
+	philosopher = (t_philo *)arg;
+	(void)arg;
+	printf("Philo %d is starting his routine\n", philosopher->id);
+	return (NULL);
 }
 
 /*
