@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:18:29 by ssottori          #+#    #+#             */
-/*   Updated: 2024/07/21 13:46:08 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/11/06 00:41:36 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ int	main(int ac, char **av)
 	ft_init_philos(&data); //to call init_mutex and init_thread
 	//ft_routine(&data); //keep track of philo states
 	//ft_clear_table(&data);
+	sleep(2);
+	ft_clear_table(&data);
 	return (EXIT_SUCCESS);
 }

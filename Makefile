@@ -12,10 +12,7 @@ NAME = philos
 
 SRC_DIR = src
 INC = inc
-LIBFT_PATH = libft
-LFLAGS = -L$(LIBFT_PATH) -lft
-IFLAGS = -I$(INC) -I$(LIBFT_PATH)/inc
-LIBFT = $(LIBFT_PATH)/libft.a
+IFLAGS = -I$(INC)
 
 # ================SRCS=================
 SRCS = main.c \
@@ -23,17 +20,15 @@ SRCS = main.c \
 		parser.c \
 		utils.c \
 		philos.c \
+		cleanup.c \
 
 OBJS = $(SRCS:.c=.o)
 
 # ===============BUILD==================
-all: $(LIBFT) $(NAME)
-
-$(LIBFT):
-	$(MAKE) -C $(LIBFT_PATH)
+all: $(NAME)
 
 $(NAME): $(OBJS)
-			$(CCFLAGS) $(OBJS) $(IFLAGS) $(LFLAGS) -o $(NAME)
+			$(CCFLAGS) $(OBJS) $(IFLAGS) -o $(NAME)
 	@echo "[$(GREEN)PHILOS$(NC)] - $<"
 
 %.o: %.c
@@ -43,12 +38,10 @@ $(NAME): $(OBJS)
 # ===============CLEAN==================
 clean:
 	@echo "[$(RED)PHILOS$(NC)] Cleaning object files..."
-			$(MAKE) -C $(LIBFT_PATH) clean
 			@$(RM) $(OBJS)
 
 fclean: clean
 	@echo "[$(RED)PHILOS$(NC)] Cleaning executable file..."
-			$(MAKE) -C $(LIBFT_PATH) fclean
 			@$(RM) $(NAME)
 
 re: fclean all

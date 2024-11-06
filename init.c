@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:33:16 by ssottori          #+#    #+#             */
-/*   Updated: 2024/07/21 15:43:02 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/11/06 00:38:17 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ void	ft_init_philos(t_data *data)
 	ft_init_data(data);
 	ft_init_mutexes(data);
 	ft_init_threads(data);
-
 }
+
+/* sets up each philos data (ID, each chopstick iD and inits a mutex lock as well as sim start time)*/
 
 void	ft_init_data(t_data *data)
 {
@@ -40,6 +41,7 @@ void	ft_init_data(t_data *data)
 	data->start_time = ft_get_time();
 }
 
+/*init mutex for each fork*/
 void	ft_init_mutexes(t_data *data)
 {
 	int	i;
@@ -47,14 +49,21 @@ void	ft_init_mutexes(t_data *data)
 	i = 0;
 	while (i < data->nop)
 	{
-		pthread_mutex_init(&data->forks[i], NULL);
+		if (pthread_mutex_init(&data->forks[i], NULL) != 0)
+		{
+			perror("Failed to init form mutex");
+			exit(EXIT_FAILURE);
+		}
 		i++;
 	}
-	pthread_mutex_destroy(&data->lock);
-	free(data->forks);
-	free(data->philos);
-	free(data->threads);
+	if (pthread_mutex_init(&data->lock, NULL) != 0)
+	{
+		perror("Failed to init lock mutex");
+		exit(EXIT_FAILURE);
+	}
 }
+
+/*makes thread for each philo passing ft_routine for each philo to follow*/
 
 void	ft_init_threads(t_data *data)
 {

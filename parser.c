@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 01:46:24 by ssottori          #+#    #+#             */
-/*   Updated: 2024/07/21 15:12:31 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/10/23 10:37:57 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_parser(t_data *data, int ac, char **av)
 	else
 		data->must_eat_times = -1;
 	if (data->nop <= 0 || data->rip_time <= 0 || data->muncies_time <= 0 || data->nap_time <= 0 || (ac == 6 && data->must_eat_times <= 0))
-        return 0;
+		return 0;
 	return (1);
 }
 //needs to parse args
@@ -54,3 +54,4 @@ int	ft_atoi(const char *str)
 		r = r * 10 + *str++ - '0';
 	return (r * s);
 }
+

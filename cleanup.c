@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philos.c                                           :+:      :+:    :+:   */
+/*   cleanup.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/21 13:32:50 by ssottori          #+#    #+#             */
-/*   Updated: 2024/11/06 00:47:04 by ssottori         ###   ########.fr       */
+/*   Created: 2024/11/06 00:31:07 by ssottori          #+#    #+#             */
+/*   Updated: 2024/11/06 00:43:03 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philos.h"
 
-void    *ft_routine(void *arg)
+/*destroy mutexes and frees alloc mem when program ends*/
+void	ft_clear_table(t_data *data)
 {
-    t_philo *philosopher = (t_philo *)arg;
-    (void)arg;
-    printf("Philo %d is starting his routine\n", philosopher->id);
-    return (NULL);
-}
+	int	i;
 
-/*
-Each philo can be in one of three, thinking, hungry, or eating
-routine function 
-*/
+	i = 0;
+	while (i < data->nop)
+	{
+		pthread_mutex_destroy(&data->forks[i]);
+		i++;
+	}
+	pthread_mutex_destroy(&data->lock);
+	free(data->forks);
+	free(data->philos);
+	free(data->threads);
+}
